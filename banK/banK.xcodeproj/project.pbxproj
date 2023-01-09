@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91B1D824296CA025003E497A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1D823296CA025003E497A /* LoginView.swift */; };
+		91B1D829296CD549003E497A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1D828296CD549003E497A /* OnboardingViewController.swift */; };
 		91DA19542967773200566DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA19532967773200566DA9 /* AppDelegate.swift */; };
 		91DA19582967773200566DA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DA19572967773200566DA9 /* ViewController.swift */; };
 		91DA195D2967773300566DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91DA195C2967773300566DA9 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		91B1D823296CA025003E497A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		91B1D828296CD549003E497A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		91DA19502967773200566DA9 /* banK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91DA19532967773200566DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91DA19572967773200566DA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		91B1D825296CD42F003E497A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				91B1D828296CD549003E497A /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		91DA19472967773200566DA9 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 		91DA19522967773200566DA9 /* banK */ = {
 			isa = PBXGroup;
 			children = (
+				91B1D825296CD42F003E497A /* Onboarding */,
 				91DA19532967773200566DA9 /* AppDelegate.swift */,
 				91B1D822296C9D82003E497A /* Files */,
 				91B1D821296C9CE3003E497A /* New Group */,
@@ -153,6 +164,7 @@
 				91DA19582967773200566DA9 /* ViewController.swift in Sources */,
 				91DA19542967773200566DA9 /* AppDelegate.swift in Sources */,
 				91B1D824296CA025003E497A /* LoginView.swift in Sources */,
+				91B1D829296CD549003E497A /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
