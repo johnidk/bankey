@@ -7,7 +7,9 @@
 
 import UIKit
 
+
 class OnboardingViewController: UIViewController {
+    
     let stackView = UIStackView()
     let image = UIImageView()
     let label = UILabel()
@@ -50,6 +52,7 @@ extension OnboardingViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         
+      
     }
     
     func layout() {
