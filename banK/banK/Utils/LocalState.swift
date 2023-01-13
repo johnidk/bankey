@@ -1,5 +1,5 @@
 //
-//  LocalState.swift
+//  LocalState.swiftcd bank
 //  banK
 //
 //  Created by João Gabriel Lavareda Ayres Barreto on 12/01/23.
@@ -18,7 +18,6 @@ public class LocalState {
         }
         set(newValue) {
             UserDefaults.standard.set(newValue, forKey: Keys.hasOnboarded.rawValue)
-            UserDefaults.standard.synchronize()
         }
     }
 }
