@@ -64,9 +64,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="npL-Xa-loy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4YG-w2-bzu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="npL-Xa-loy" secondAttribute="bottom" constant="16" id="TAp-6i-ztq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="npL-Xa-loy" secondAttribute="bottom" priority="999" constant="16" id="TAp-6i-ztq"/>
                 <constraint firstItem="npL-Xa-loy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="VqN-fr-2uE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npL-Xa-loy" secondAttribute="trailing" constant="16" id="q20-8O-zyA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="npL-Xa-loy" secondAttribute="trailing" priority="999" constant="16" id="q20-8O-zyA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="138.93129770992365" y="20.422535211267608"/>

@@ -27,8 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         onboardingContainerViewController.delegate = self
         loginViewController.delegate = self
-        dummyViewController.logoutDelegate = self
         
+        let vc = mainViewController
+        vc.setStatusBar()
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
         
         window?.rootViewController = AccountSummaryViewController()
 
@@ -41,7 +45,7 @@ extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
         window?.rootViewController = onboardingContainerViewController
         if LocalState.hasOnboarded {
-            setRootViewController(dummyViewController)
+            setRootViewController(mainViewController)
         } else {
             setRootViewController(onboardingContainerViewController)
         }
