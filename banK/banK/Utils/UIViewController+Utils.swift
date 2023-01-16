@@ -74,11 +74,12 @@ struct CurrencyFormatter {
     // Converts 929466 > $929,466.00
     func dollarsFormatted(_ dollars: Double) -> String {
         let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "pt_BR")
         formatter.numberStyle = .currency
-        formatter.locale = Locale(identifier: "en_US")
         formatter.usesGroupingSeparator = true
         
         if let result = formatter.string(from: dollars as NSNumber) {
+            print(result)
             return result
         }
         
@@ -86,11 +87,14 @@ struct CurrencyFormatter {
     }
     
     private func makeBalanceAttributed(dollars: String, cents: String) -> NSMutableAttributedString {
+        
+       
         let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
         let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
         let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
         
         let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        
         let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
         let centString = NSAttributedString(string: cents, attributes: centAttributes)
         

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		916B187A29735FC6009233C4 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B187929735FC6009233C4 /* AccountSummaryCell.swift */; };
 		916B1889297523BD009233C4 /* UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B1888297523BD009233C4 /* UT.swift */; };
-		916B188B29752A0A009233C4 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B188A29752A0A009233C4 /* test.swift */; };
 		916B35FC2971F44600D2423F /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B35FB2971F44600D2423F /* UIViewController+Utils.swift */; };
 		916B35FE2971F63700D2423F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B35FD2971F63700D2423F /* MainViewController.swift */; };
 		916B3601297204BE00D2423F /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B3600297204BE00D2423F /* AccountSummaryViewController.swift */; };
@@ -40,7 +39,6 @@
 		916B187929735FC6009233C4 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		916B187F2975231B009233C4 /* banKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = banKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		916B1888297523BD009233C4 /* UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UT.swift; sourceTree = "<group>"; };
-		916B188A29752A0A009233C4 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		916B35FB2971F44600D2423F /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		916B35FD2971F63700D2423F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		916B3600297204BE00D2423F /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				916B1888297523BD009233C4 /* UT.swift */,
-				916B188A29752A0A009233C4 /* test.swift */,
 			);
 			path = banKTests;
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				916B1889297523BD009233C4 /* UT.swift in Sources */,
-				916B188B29752A0A009233C4 /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

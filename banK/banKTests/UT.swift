@@ -16,15 +16,14 @@ class Test: XCTestCase {
         super.setUp()
         vc = CurrencyFormatter()
     }
-    
-    func breakDollarToCents() throws {
-        let result = vc.breakIntoDollarsAndCents(5334.69)
-        XCTAssertEqual(result.0, "5334,69")
-        XCTAssertEqual(result.1, "12")
-    }
-    
-    func dollarsFormatted() throws {
-        let result = vc.dollarsFormatted(929466.23)
-        XCTAssertEqual(result, "$929,466.23")
-    }
+
+
+//    func testDollarsFormatLocale() throws {
+//        let locale = Locale.current
+//        let currentSymbol = locale.currencySymbol!
+//
+//        let result = vc.dollarsFormatted(992893.23)
+//        print("\(currentSymbol)")
+//        XCTAssertEqual(result, "\(currentSymbol) 992.893,23")
+//    }
 }
