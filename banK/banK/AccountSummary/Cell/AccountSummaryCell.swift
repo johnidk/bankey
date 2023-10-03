@@ -1,32 +1,32 @@
 //
 //  AccountSummaryCell.swift
-//  Bankey
+//  banK
 //
-//  Created by jrasmusson on 2021-11-04.
+//  Created by João Gabriel Lavareda Ayres Barreto on 13/01/23.
 //
 
 import Foundation
 import UIKit
 
+enum AccountType: String, Codable {
+    case Banking
+    case CreditCard
+    case Investment
+}
+
 class AccountSummaryCell: UITableViewCell {
-    
-    enum AccountType: String {
-        case Banking
-        case CreditCard
-        case Investment
-    }
-    
+
     struct ViewModel {
         let accountType: AccountType
         let accountName: String
         let balance: Decimal
         
-        var balanceAsAttrString: NSAttributedString {
+        var balanceAsAttributedString: NSAttributedString {
             return CurrencyFormatter().makeAttributedCurrency(balance)
         }
     }
     
-    let viewmodel: ViewModel? = nil
+    let viewModel: ViewModel? = nil
     
     let typeLabel = UILabel()
     let underlineView = UIView()
@@ -64,19 +64,19 @@ extension AccountSummaryCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
-        nameLabel.text = "Account name"
         nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.text = "Account name"
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
         balanceStackView.axis = .vertical
         balanceStackView.spacing = 0
-        
+
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
-        balanceLabel.text = "Some balance"
         balanceLabel.adjustsFontSizeToFitWidth = true
-        
+        balanceLabel.text = "Some balance"
+
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
         balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "XXX,XXX", cents: "XX")
@@ -85,20 +85,18 @@ extension AccountSummaryCell {
         let chevronImage = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
         chevronImageView.image = chevronImage
         
-    }
-    
-    private func layout() {
-        
         contentView.addSubview(typeLabel) // imporant! Add to contentView.
         contentView.addSubview(underlineView)
         contentView.addSubview(nameLabel)
         
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(balanceAmountLabel)
-        
+            
         contentView.addSubview(balanceStackView)
         contentView.addSubview(chevronImageView)
-        
+    }
+    
+    private func layout() {
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
@@ -117,44 +115,37 @@ extension AccountSummaryCell {
     }
     
     private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
-        let realSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
-    
-        let rootString = NSMutableAttributedString(string: "R", attributes: realSignAttributes)
-        let dollarSignString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
-        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
-        let centString = NSAttributedString(string: cents, attributes: centAttributes)
-        
-        rootString.append(dollarSignString)
-        rootString.append(dollarString)
-        rootString.append(centString)
-        
-        return rootString
-    }
+            let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+            let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+            let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+            
+            let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+            let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+            let centString = NSAttributedString(string: cents, attributes: centAttributes)
+            
+            rootString.append(dollarString)
+            rootString.append(centString)
+            
+            return rootString
+        }
 }
 
 extension AccountSummaryCell {
     func configure(with vm: ViewModel) {
-        
         typeLabel.text = vm.accountType.rawValue
         nameLabel.text = vm.accountName
-        balanceAmountLabel.attributedText = vm.balanceAsAttrString
+        balanceAmountLabel.attributedText = vm.balanceAsAttributedString
         
         switch vm.accountType {
         case .Banking:
             underlineView.backgroundColor = appColor
-            balanceLabel.text = "Current Balance"
+            balanceLabel.text = "Current balance"
         case .CreditCard:
             underlineView.backgroundColor = .systemOrange
-            balanceLabel.text = "Balance"
+            balanceLabel.text = "Current balance"
         case .Investment:
-            underlineView.backgroundColor = .systemRed
+            underlineView.backgroundColor = .systemPurple
             balanceLabel.text = "Value"
         }
     }
 }
-
-
-
