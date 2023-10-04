@@ -1,2 +1,3 @@
 # bankey
-training app in Swift using UIKit no storyboard
+
+iOS spend management app created with UIKit.
