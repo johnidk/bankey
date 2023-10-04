@@ -41,14 +41,14 @@ extension LoginView {
         stackView.spacing = 8
         
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.placeholder = "Username"
+        usernameTextField.placeholder = "Username is Test"
         usernameTextField.delegate = self
 
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .secondarySystemFill
 
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = "Password is test"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
         passwordTextField.enablePasswordToggle()

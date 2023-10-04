@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AccountSummaryHeaderView: UIView {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     
     let shakeyBellView = ShakeyBellView()
        
@@ -27,6 +29,7 @@ class AccountSummaryHeaderView: UIView {
                return date.monthDayYearString
            }
        }
+
        
        override init(frame: CGRect) {
            super.init(frame: frame)
@@ -43,6 +46,7 @@ class AccountSummaryHeaderView: UIView {
        }
        
        private func commonInit() {
+                      
            let bundle = Bundle(for: AccountSummaryHeaderView.self)
            bundle.loadNibNamed("AccountSummaryHeaderView", owner: self, options: nil)
            addSubview(contentView)

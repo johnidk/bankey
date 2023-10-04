@@ -18,21 +18,18 @@ class MainViewController: UITabBarController {
     
     private func setupViews() {
         let summaryVC = AccountSummaryViewController()
-        let moneyVC = MoveMoneyViewController()
-        let moreVC = MoreViewController()
+        let moneyVC = StockViewController()
         
-            
         summaryVC.setTabBarImage(imageName: "list.dash.header.rectangle", title: "Summary")
-        moneyVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "Move Money")
-        moreVC.setTabBarImage(imageName: "ellipsis.circle", title: "More")
+        moneyVC.setTabBarImage(imageName: "arrow.left.arrow.right", title: "Stocks")
+       
         
         let summaryNC = UINavigationController(rootViewController: summaryVC)
         let moneyNC = UINavigationController(rootViewController: moneyVC)
-        let moreNC = UINavigationController(rootViewController: moreVC)
         
         hideNavigationBarLine(summaryNC.navigationBar)
         moneyNC.setStatusBar()
-        let tabBarList = [summaryNC, moneyNC, moreNC]
+        let tabBarList = [summaryNC, moneyNC]
         
         viewControllers = tabBarList
     }
@@ -58,8 +55,4 @@ class MoveMoneyViewController: UIViewController {
 }
 
 
-class MoreViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemPurple
-    }
-}
+
